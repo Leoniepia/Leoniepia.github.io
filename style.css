@@ -1,5 +1,5 @@
 body {
-    font-family:Arial, Helvetica, sans-serif
+    font-family: Neue Haas Grotesk Text Pro; 
     background-color: white;
     color: black;
 }
@@ -7,13 +7,15 @@ body {
 
 h1 {
     font-size: 8em;
+    font-weight: 10; 
     color: black;
     margin-top: 0px;
     line-height: 0.8;
 }
 
 h2 {
-    font-size: 1.5em;
+    font-weight: 1;
+    font-size: 8em;
     color: black;
 }
 
@@ -42,7 +44,7 @@ img:hover {
 
 .introvideo {
     position: absolute; 
-    left: 17%; 
+    left: 13%; 
     top: 75%; 
 }
 
@@ -78,3 +80,29 @@ img:hover {
     margin-top: 10px;
 }
 
+.modedesign {
+    padding-left: 30%;;
+}
+
+.und {
+    font-family: Monotype Corsiva; 
+    padding-left: 70%;
+    font-size: 1.5em;
+    top: -300px;
+    z-index: 1; 
+}
+
+.kommunikationsdesign {
+    padding-left: 37%; 
+}
+
+.intro {
+    line-height: 400%;
+    z-index: 1; 
+}
+
+.introbilder {
+    position: relative; 
+    top: -800px; 
+    z-index: 1; 
+}
