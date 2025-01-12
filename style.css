@@ -56,12 +56,9 @@ img:hover {
 /*Home*/
 
 .deckbild {
-    background-image: url(/Dateien/01fb5fe6d4999a955041792dcba70f8a2469837887.jpg);
-    background-size: cover;
     position: absolute;
-    top: 200%;
-    background-size: cover;
- }
+    top: 160%;
+}
 
 .introvideo {
     position: absolute; 
@@ -166,6 +163,73 @@ img:hover {
 }
 
 .fußleiste a:hover {
+    font-size: 1.2em;
+    color: #000000; 
+}
+
+
+/*Symbiosis*/
+
+.symbiosisinfo {
+    text-align:justify;
+    position: absolute; 
+    left: 11%; 
+    top: 40%;
+}
+
+.endlos {
+    font-family: Monotype Corsiva; 
+    font-size: 1.5em;
+    position: absolute; 
+    left: 10%; 
+    top: 8%; 
+}
+
+.symbiosisfoto1 {
+    position: absolute; 
+    left: 50%; 
+    top: 220%;  
+}
+
+.symbiosisfoto1 p {
+    font-size: 0.8em;
+    line-height: 0%;
+}
+
+.symbiosisfoto2 {
+    position: absolute; 
+    left: 11%; 
+    top: 250%;  
+}
+
+.symbiosisfoto2 p {
+    font-size: 0.8em;
+    line-height: 0%;
+}
+
+.symbiosisvideo {
+    position: absolute; 
+    top: 80%; 
+    left: 0%;
+}
+
+.symbiosisvideo video {
+    width: 100%;
+}
+
+.fußleistesymbiosis {
+    position: absolute; 
+    left: 3%; 
+    top: 370%;
+    line-height: 3; 
+}
+    
+.fußleistesymbiosis a {
+    text-decoration: none; 
+    color: black;         
+}
+    
+.fußleistesymbiosis a:hover {
     font-size: 1.2em;
     color: #000000; 
 }
