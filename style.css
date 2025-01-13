@@ -2,7 +2,9 @@ body {
     font-family: Neue Haas Grotesk Text Pro; 
     background-color: white;
     color: black;
+    cursor: url('Dateien/Cursor/Unbenannt-2.png'), auto;
 }
+
 
 /*Überschriften*/
 
@@ -170,7 +172,7 @@ img:hover {
 
 /*Symbiosis*/
 
-.symbiosisinfo {
+.symbiosisinfo1 {
     text-align:justify;
     position: absolute; 
     left: 11%; 
@@ -185,10 +187,17 @@ img:hover {
     top: 8%; 
 }
 
+.symbiosisinfo2 {
+    text-align:justify;
+    position: absolute; 
+    left: 52%; 
+    top: 220%;
+}
+
 .symbiosisfoto1 {
     position: absolute; 
     left: 50%; 
-    top: 220%;  
+    top: 258%;  
 }
 
 .symbiosisfoto1 p {
@@ -199,7 +208,7 @@ img:hover {
 .symbiosisfoto2 {
     position: absolute; 
     left: 11%; 
-    top: 250%;  
+    top: 230%;  
 }
 
 .symbiosisfoto2 p {
@@ -220,7 +229,7 @@ img:hover {
 .fußleistesymbiosis {
     position: absolute; 
     left: 3%; 
-    top: 370%;
+    top: 340%;
     line-height: 3; 
 }
     
@@ -232,4 +241,39 @@ img:hover {
 .fußleistesymbiosis a:hover {
     font-size: 1.2em;
     color: #000000; 
+}
+
+/*Nachtfallen*/
+
+.nachtfalleninfo {
+    text-align:justify;
+    position: absolute; 
+    left: 11%; 
+    top: 40%;  
+}
+
+.träume {
+    font-family: Monotype Corsiva; 
+    font-size: 1.5em;
+    position: absolute; 
+    left: 10%; 
+    top: 8%; 
+}
+
+.nachtfallenfoto1 {
+    position: absolute; 
+    left: 11%; 
+    top: 80%;  
+}
+
+.nachtfallenfoto2 {
+    position: absolute; 
+    left: 50%; 
+    top: 258%;  
+}
+
+.nachtfallenfoto3 {
+    position: absolute; 
+    left: 11%; 
+    top: 300%;  
 }
