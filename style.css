@@ -1,7 +1,7 @@
 body {
     font-family: Neue Haas Grotesk Text Pro; 
-    background-color: white;
-    color: black;
+    background-color: rgb(255, 255, 255);
+    color: rgb(245, 59, 59);
     cursor: url('Dateien/Cursor/Unbenannt-2.png'), auto;
 }
 
@@ -11,7 +11,7 @@ body {
 h1 {
     font-size: 6em;
     font-weight: 10; 
-    color: black;
+    color: rgb(245, 59, 59);
     margin-top: 0px;
     line-height: 0.8;
 }
@@ -19,13 +19,13 @@ h1 {
 h2 {
     font-weight: 1;
     font-size: 3em;
-    color: black;
+    color: rgb(220, 21, 21);
 }
 
 h3 {
     font-size: 1.5em;
     font-weight: 100; 
-    color: black;
+    color: rgb(255, 77, 0);
     margin-top: 0px;
     line-height: 1;   
 }
@@ -43,12 +43,12 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: black;
+    color: rgb(245, 59, 59);
 }
 
 nav ul li a:hover {
     font-size: 1.2em;
-    color: #000000; 
+    color: rgb(255, 68, 0);
 }
 
 img:hover {
@@ -57,16 +57,16 @@ img:hover {
 
 /*Home*/
 
-.deckbild {
-    position: absolute;
-    top: 160%;
-}
-
-.introvideo {
+.homevideo {
     position: absolute; 
-    left: 61%; 
-    top: 300%; 
+    top: 0%; 
+    left: 0%;
+    z-index: -10;
 }
+    
+.homevideo video {
+    width: 100%;
+} 
 
 .no-picture-in-picture {
     pointer-events: none; 
@@ -248,7 +248,7 @@ img:hover {
     
 .fußleistesymbiosis a:hover {
     font-size: 1.2em;
-    color: #000000; 
+    color: #ff0000; 
 }
 
 /*Nachtfallen*/
@@ -320,3 +320,133 @@ img:hover {
     font-size: 1.2em;
     color: #000000; 
 }
+
+/*Welke Weise*/
+
+.welkeweiseinfo {
+    text-align:justify;
+    position: absolute; 
+    left: 11%; 
+    top: 40%;   
+}
+
+.welkeweiseinfo2 {
+    text-align:justify;
+    position: absolute; 
+    left: 52%; 
+    top: 220%;
+}
+
+.welkeweisefoto1 {
+    position: absolute; 
+    left: 50%; 
+    top: 258%;  
+}
+
+.welkeweisefoto1 p {
+    font-size: 0.8em;
+    line-height: 0%;
+}
+
+.welkeweisefoto2 {
+    position: absolute; 
+    left: 11%; 
+    top: 230%;  
+}
+
+.welkeweisefoto2 p {
+    font-size: 0.8em;
+    line-height: 0%;
+}
+
+.welkeweisevideo {
+    position: absolute; 
+    top: 80%; 
+    left: 0%;
+}
+
+.welkeweisevideo video {
+    width: 100%;
+}
+
+.fußleistewelkeweise {
+    position: absolute; 
+    left: 3%; 
+    top: 340%;
+    line-height: 3; 
+}
+    
+.fußleistewelkeweise a {
+    text-decoration: none; 
+    color: black;         
+}
+    
+.fußleistewelkeweise a:hover {
+    font-size: 1.2em;
+    color: #000000; 
+}
+
+/*Schlehenschwärmer*/
+
+.schleheninfo1 {
+    text-align:justify;
+    position: absolute; 
+    left: 11%; 
+    top: 40%;   
+}
+
+.schleheninfo2 {
+    position: absolute; 
+    left: 52%; 
+    top: 220%;
+}
+
+.schlehenfoto1 {
+    position: absolute; 
+    left: 50%; 
+    top: 258%;  
+}
+
+.schlehenfoto1 p {
+    font-size: 0.8em;
+    line-height: 0%;
+}
+
+.schlehenfoto2 {
+    position: absolute; 
+    left: 11%; 
+    top: 230%;  
+}
+
+.schlehenfoto2 p {
+    font-size: 0.8em;
+    line-height: 0%;
+}
+
+.schlehenvideo {
+    position: absolute; 
+    top: 80%; 
+    left: 0%;
+}
+
+.schlehenvideo video {
+    width: 100%;
+}
+
+.fußleisteschlehen {
+    position: absolute; 
+    left: 3%; 
+    top: 340%;
+    line-height: 3; 
+}
+    
+.fußleisteschlehen a {
+    text-decoration: none; 
+    color: black;         
+}
+    
+.fußleisteschlehen a:hover {
+    font-size: 1.2em;
+    color: #000000; 
+}
+
