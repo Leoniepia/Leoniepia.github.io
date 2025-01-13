@@ -140,17 +140,25 @@ img:hover {
 
 .projektschlehenschwärmer {
     position: absolute; 
-    left: 52%; 
+    left: 3%; 
     top: 118%; 
     line-height: 3;
+}
+
+.projektwelkeweise {
+    position: absolute; 
+    left: 52%; 
+    top: 118%;
+    line-height: 3; 
 }
 
 .projektei {
     position: absolute; 
     left: 3%; 
-    top: 118%;
+    top: 206%;
     line-height: 3; 
 }
+
 
 .fußleiste {
     position: absolute; 
@@ -262,18 +270,53 @@ img:hover {
 
 .nachtfallenfoto1 {
     position: absolute; 
-    left: 11%; 
+    left: 1%; 
     top: 80%;  
 }
 
 .nachtfallenfoto2 {
     position: absolute; 
-    left: 50%; 
-    top: 258%;  
+    left: 36.5%; 
+    top: 80%;  
 }
 
 .nachtfallenfoto3 {
     position: absolute; 
-    left: 11%; 
-    top: 300%;  
+    left: 72%; 
+    top: 80%;  
+}
+
+.nachtfallenfoto4 {
+    position: absolute; 
+    left: 1%; 
+    top: 175%;  
+}
+
+.nachtfallenfoto5 {
+    position: absolute; 
+    left: 36.5%; 
+    top: 175%;  
+}
+
+.nachtfallenfoto6 {
+    position: absolute; 
+    left: 72%; 
+    top: 175%;  
+}
+
+.fußleistenacht {
+    position: absolute; 
+    left: 3%; 
+    top: 280%;
+    line-height: 3; 
+}
+    
+.fußleistenacht a {
+    text-decoration: none; 
+    color: black;         
+}
+    
+.fußleistenacht a:hover {
+    font-size: 1.2em;
+    color: #000000; 
 }
