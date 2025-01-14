@@ -64,16 +64,17 @@ img:hover {
     top: 40%;
 }
 
-.kontaktfoto {
+.kontaktvideo {
     position: absolute; 
-    top: 80%; 
-    left: 80%;
+    top: 70%; 
+    right: 5%;
+    z-index: -10;
 }
 
 .fußleistekontakt {
     position: absolute; 
     left: 3%; 
-    top: 130%;
+    top: 95%;
     line-height: 3; 
 }
 
@@ -103,13 +104,6 @@ img:hover {
 .no-picture-in-picture {
     pointer-events: none; 
     object-fit: cover;
-}
-
-.homevideo2 {
-    position: absolute; 
-    top: 70%; 
-    right: 5%;
-    z-index: -10;
 }
 
 .introbilder {
@@ -179,15 +173,15 @@ img:hover {
 
 .projektschlehenschwärmer {
     position: absolute; 
-    left: 3%; 
-    top: 118%; 
+    left: 25%; 
+    top: 96%; 
     line-height: 3;
 }
 
 .projektwelkeweise {
     position: absolute; 
-    left: 52%; 
-    top: 118%;
+    left: 62%; 
+    top: 80%;
     line-height: 3; 
 }
 
@@ -202,7 +196,7 @@ img:hover {
 .fußleiste {
     position: absolute; 
     left: 3%; 
-    top: 230%;
+    top: 170%;
     line-height: 3; 
 }
 
