@@ -19,13 +19,13 @@ h1 {
 h2 {
     font-weight: 1;
     font-size: 3em;
-    color: rgb(220, 21, 21);
+    color: rgb(245, 59, 59);
 }
 
 h3 {
     font-size: 1.5em;
     font-weight: 100; 
-    color: rgb(255, 77, 0);
+    color: rgb(245, 59, 59);
     margin-top: 0px;
     line-height: 1;   
 }
@@ -55,6 +55,38 @@ img:hover {
     transform: scale(1.05);
 }
 
+/*Kontakt*/
+
+.kontaktinfo1 {
+    text-align:justify;
+    position: absolute; 
+    left: 11%; 
+    top: 40%;
+}
+
+.kontaktfoto {
+    position: absolute; 
+    top: 80%; 
+    left: 80%;
+}
+
+.fußleistekontakt {
+    position: absolute; 
+    left: 3%; 
+    top: 130%;
+    line-height: 3; 
+}
+
+.fußleistekontakt a {
+    text-decoration: none; 
+    color: rgb(255, 68, 0);       
+}
+
+.fußleistekontakt a:hover {
+    font-size: 1.2em;
+    color: rgb(255, 68, 0);
+}
+
 /*Home*/
 
 .homevideo {
@@ -71,6 +103,13 @@ img:hover {
 .no-picture-in-picture {
     pointer-events: none; 
     object-fit: cover;
+}
+
+.homevideo2 {
+    position: absolute; 
+    top: 70%; 
+    right: 5%;
+    z-index: -10;
 }
 
 .introbilder {
@@ -169,12 +208,12 @@ img:hover {
 
 .fußleiste a {
     text-decoration: none; 
-    color: black;         
+    color: rgb(255, 68, 0);       
 }
 
 .fußleiste a:hover {
     font-size: 1.2em;
-    color: #000000; 
+    color: rgb(255, 68, 0);
 }
 
 
@@ -243,12 +282,12 @@ img:hover {
     
 .fußleistesymbiosis a {
     text-decoration: none; 
-    color: black;         
+    color: rgb(255, 68, 0);       
 }
     
 .fußleistesymbiosis a:hover {
     font-size: 1.2em;
-    color: #ff0000; 
+    color: rgb(255, 68, 0);
 }
 
 /*Nachtfallen*/
@@ -313,12 +352,12 @@ img:hover {
     
 .fußleistenacht a {
     text-decoration: none; 
-    color: black;         
+    color: rgb(255, 68, 0);        
 }
     
 .fußleistenacht a:hover {
     font-size: 1.2em;
-    color: #000000; 
+    color: rgb(255, 68, 0);
 }
 
 /*Welke Weise*/
@@ -398,12 +437,12 @@ img:hover {
     
 .fußleistewelkeweise a {
     text-decoration: none; 
-    color: black;         
+    color: rgb(255, 68, 0);        
 }
     
 .fußleistewelkeweise a:hover {
     font-size: 1.2em;
-    color: #000000; 
+    color: rgb(255, 68, 0);
 }
 
 /*Schlehenschwärmer*/
@@ -462,11 +501,11 @@ img:hover {
     
 .fußleisteschlehen a {
     text-decoration: none; 
-    color: black;         
+    color: rgb(255, 68, 0);        
 }
     
 .fußleisteschlehen a:hover {
     font-size: 1.2em;
-    color: #000000; 
+    color: rgb(255, 68, 0);
 }
 
