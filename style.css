@@ -334,13 +334,13 @@ img:hover {
     text-align:justify;
     position: absolute; 
     left: 52%; 
-    top: 220%;
+    top: 150%;
 }
 
 .welkeweisefoto1 {
     position: absolute; 
     left: 50%; 
-    top: 258%;  
+    top: 183%;  
 }
 
 .welkeweisefoto1 p {
@@ -351,7 +351,7 @@ img:hover {
 .welkeweisefoto2 {
     position: absolute; 
     left: 11%; 
-    top: 230%;  
+    top: 155%;  
 }
 
 .welkeweisefoto2 p {
@@ -359,20 +359,40 @@ img:hover {
     line-height: 0%;
 }
 
-.welkeweisevideo {
+.welkeweisefoto3 {
     position: absolute; 
     top: 80%; 
     left: 0%;
 }
 
-.welkeweisevideo video {
-    width: 100%;
+.welkeweisefoto4 {
+    position: absolute; 
+    top: 80%; 
+    left: 20%;
+}
+
+.welkeweisefoto5 {
+    position: absolute; 
+    top: 80%; 
+    left: 40%;
+}
+
+.welkeweisefoto6 {
+    position: absolute; 
+    top: 80%; 
+    left: 60%;
+}
+
+.welkeweisefoto7 {
+    position: absolute; 
+    top: 80%; 
+    left: 80%;
 }
 
 .fußleistewelkeweise {
     position: absolute; 
     left: 3%; 
-    top: 340%;
+    top: 265%;
     line-height: 3; 
 }
     
