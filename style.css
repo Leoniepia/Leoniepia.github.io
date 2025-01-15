@@ -2,9 +2,25 @@ body {
     font-family: Neue Haas Grotesk Text Pro; 
     background-color: rgb(255, 255, 255);
     color: rgb(245, 59, 59);
-    cursor: url('Dateien/Cursor/Unbenannt-2.png'), auto;
+    cursor: none;
 }
 
+/*Cursor*/
+
+.custom-cursor {
+    position: fixed;
+    width: 20px; 
+    height: 20px;
+    background-color: rgb(245, 59, 59);
+    border-radius: 50%;
+    pointer-events: none; 
+    transform: translate(-50%, -50%); 
+    z-index: 9999; 
+  }
+
+* {
+    cursor: none;
+}
 
 /*Überschriften*/
 
@@ -44,15 +60,17 @@ nav ul {
 nav ul li a {
     text-decoration: none;
     color: rgb(245, 59, 59);
+    cursor: none;
 }
 
 nav ul li a:hover {
     font-size: 1.2em;
-    color: rgb(255, 68, 0);
+    color: rgb(255, 0, 68);
 }
 
 img:hover {
     transform: scale(1.05);
+    cursor: none;
 }
 
 /*Kontakt*/
@@ -76,11 +94,13 @@ img:hover {
     left: 3%; 
     top: 95%;
     line-height: 3; 
+    cursor: none;
 }
 
 .fußleistekontakt a {
     text-decoration: none; 
-    color: rgb(255, 68, 0);       
+    color: rgb(255, 68, 0); 
+    cursor: none;      
 }
 
 .fußleistekontakt a:hover {
@@ -185,24 +205,18 @@ img:hover {
     line-height: 3; 
 }
 
-.projektei {
-    position: absolute; 
-    left: 3%; 
-    top: 206%;
-    line-height: 3; 
-}
-
-
 .fußleiste {
     position: absolute; 
     left: 3%; 
     top: 170%;
     line-height: 3; 
+    cursor: none;  
 }
 
 .fußleiste a {
     text-decoration: none; 
-    color: rgb(255, 68, 0);       
+    color: rgb(255, 68, 0);   
+    cursor: none;      
 }
 
 .fußleiste a:hover {
@@ -276,7 +290,8 @@ img:hover {
     
 .fußleistesymbiosis a {
     text-decoration: none; 
-    color: rgb(255, 68, 0);       
+    color: rgb(255, 68, 0); 
+    cursor: none;        
 }
     
 .fußleistesymbiosis a:hover {
@@ -346,7 +361,8 @@ img:hover {
     
 .fußleistenacht a {
     text-decoration: none; 
-    color: rgb(255, 68, 0);        
+    color: rgb(255, 68, 0);
+    cursor: none;         
 }
     
 .fußleistenacht a:hover {
@@ -431,7 +447,8 @@ img:hover {
     
 .fußleistewelkeweise a {
     text-decoration: none; 
-    color: rgb(255, 68, 0);        
+    color: rgb(255, 68, 0);  
+    cursor: none;       
 }
     
 .fußleistewelkeweise a:hover {
@@ -495,7 +512,8 @@ img:hover {
     
 .fußleisteschlehen a {
     text-decoration: none; 
-    color: rgb(255, 68, 0);        
+    color: rgb(255, 68, 0);  
+    cursor: none;       
 }
     
 .fußleisteschlehen a:hover {
