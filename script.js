@@ -16,3 +16,4 @@ document.addEventListener('mouseout', () => {
 document.addEventListener('mouseover', () => {
   customCursor.style.display = 'block';
 });
+
