@@ -114,7 +114,7 @@ img:hover {
     position: absolute; 
     top: 0%; 
     left: 0%;
-    overflow: hidden;
+    overflow-y: hidden;
     z-index: -10;
 }
     
@@ -521,5 +521,7 @@ img:hover {
     font-size: 1.2em;
     color: rgb(255, 68, 0);
 }
+
+
 
 
