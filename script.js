@@ -1362,6 +1362,7 @@ function setupProjectListView(projects, overview) {
 function setupOverviewViewToggle(overview) {
   const buttons = Array.from(overview.querySelectorAll(".overview-view-button"));
   const body = document.body;
+  const mobileProjectsQuery = window.matchMedia("(max-width: 700px)");
 
   function setView(view) {
     const listView = view === "list";
@@ -1389,9 +1390,13 @@ function setupOverviewViewToggle(overview) {
     button.addEventListener("click", () => setView(button.dataset.view));
   });
 
-  setView("img");
-}
+  function syncProjectViewForViewport() {
+    setView(mobileProjectsQuery.matches ? "list" : "img");
+  }
 
+  mobileProjectsQuery.addEventListener?.("change", syncProjectViewForViewport);
+  syncProjectViewForViewport();
+}
 function renderOverviewRolodex() {
   const overview = document.querySelector(".overview-page .home-projects");
   if (!overview) return;
@@ -1988,33 +1993,37 @@ window.addEventListener("keydown", unlockVideoSound, { once: true });
 
 /* Strichkreuz-Cursor */
 
-const crossCursor = document.createElement("div");
-crossCursor.className = "cross-cursor";
-document.body.appendChild(crossCursor);
-document.body.classList.add("has-cross-cursor");
+const customCursorQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
 
-const cursorBasePixelRatio = window.devicePixelRatio || 1;
-function updateCursorZoomScale() {
-  const currentPixelRatio = window.devicePixelRatio || cursorBasePixelRatio;
-  const scale = cursorBasePixelRatio / currentPixelRatio;
-  document.documentElement.style.setProperty("--cursor-zoom-scale", String(scale));
+if (customCursorQuery.matches) {
+  const crossCursor = document.createElement("div");
+  crossCursor.className = "cross-cursor";
+  document.body.appendChild(crossCursor);
+  document.body.classList.add("has-cross-cursor");
+
+  const cursorBasePixelRatio = window.devicePixelRatio || 1;
+  function updateCursorZoomScale() {
+    const currentPixelRatio = window.devicePixelRatio || cursorBasePixelRatio;
+    const scale = cursorBasePixelRatio / currentPixelRatio;
+    document.documentElement.style.setProperty("--cursor-zoom-scale", String(scale));
+  }
+  updateCursorZoomScale();
+  window.addEventListener("resize", updateCursorZoomScale);
+  window.visualViewport?.addEventListener("resize", updateCursorZoomScale);
+
+  window.addEventListener("pointermove", (event) => {
+    crossCursor.style.left = `${event.clientX}px`;
+    crossCursor.style.top = `${event.clientY}px`;
+
+    const hoveredElement = document.elementFromPoint(event.clientX, event.clientY);
+    const darkArea = hoveredElement && hoveredElement.closest("img, .site-footer, .footer-sticky, .project-hero");
+    const clickableArea = hoveredElement && hoveredElement.closest(
+      "a, button, input, select, textarea, summary, label, video, [role='button'], [onclick], .three-wheel-canvas"
+    );
+    crossCursor.classList.toggle("is-white", Boolean(darkArea));
+    crossCursor.classList.toggle("is-clickable", Boolean(clickableArea));
+  });
 }
-updateCursorZoomScale();
-window.addEventListener("resize", updateCursorZoomScale);
-window.visualViewport?.addEventListener("resize", updateCursorZoomScale);
-
-window.addEventListener("pointermove", (event) => {
-  crossCursor.style.left = `${event.clientX}px`;
-  crossCursor.style.top = `${event.clientY}px`;
-
-  const hoveredElement = document.elementFromPoint(event.clientX, event.clientY);
-  const darkArea = hoveredElement && hoveredElement.closest("img, .site-footer, .footer-sticky, .project-hero");
-  const clickableArea = hoveredElement && hoveredElement.closest(
-    "a, button, input, select, textarea, summary, label, video, [role='button'], [onclick], .three-wheel-canvas"
-  );
-  crossCursor.classList.toggle("is-white", Boolean(darkArea));
-  crossCursor.classList.toggle("is-clickable", Boolean(clickableArea));
-});
 
 /* Flat Rolodex active card */
 
@@ -2676,3 +2685,48 @@ function setupAboutTypewriter() {
 }
 
 setupAboutTypewriter();
+
+/* Mobile navigation */
+function setupMobileNavigation() {
+  const mobileNavQuery = window.matchMedia("(max-width: 700px)");
+
+  document.querySelectorAll(".main-nav").forEach((nav) => {
+    if (nav.querySelector(".mobile-menu-toggle")) return;
+
+    const toggle = document.createElement("button");
+    toggle.className = "mobile-menu-toggle";
+    toggle.type = "button";
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open navigation");
+    toggle.textContent = "MENU";
+    nav.prepend(toggle);
+
+    toggle.addEventListener("click", () => {
+      const isOpen = document.body.classList.toggle("mobile-nav-open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      toggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    });
+
+    nav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        document.body.classList.remove("mobile-nav-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open navigation");
+      });
+    });
+  });
+
+  function closeDesktopNav() {
+    if (mobileNavQuery.matches) return;
+    document.body.classList.remove("mobile-nav-open");
+    document.querySelectorAll(".mobile-menu-toggle").forEach((toggle) => {
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open navigation");
+    });
+  }
+
+  mobileNavQuery.addEventListener?.("change", closeDesktopNav);
+  closeDesktopNav();
+}
+
+setupMobileNavigation();

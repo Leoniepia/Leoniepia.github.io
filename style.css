@@ -4621,3 +4621,256 @@ body.list-view-active .project-list-view {
     top: clamp(210px, 38vh, 250px) !important;
   }
 }
+
+/* Mobile version: menu navigation, list-only projects, native cursor */
+.mobile-menu-toggle {
+  display: none;
+}
+
+@media (hover: none), (pointer: coarse) {
+  body.has-cross-cursor,
+  body.has-cross-cursor * {
+    cursor: auto !important;
+  }
+
+  .cross-cursor {
+    display: none !important;
+  }
+}
+
+@media (max-width: 700px) {
+  html,
+  body {
+    --nav-edge: 18px;
+    overflow-x: hidden !important;
+  }
+
+  body.has-cross-cursor,
+  body.has-cross-cursor * {
+    cursor: auto !important;
+  }
+
+  .cross-cursor {
+    display: none !important;
+  }
+
+  .main-nav,
+  body.about-page .main-nav,
+  body.contact-page .main-nav,
+  .detail-page.horizontal-detail-page .main-nav {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 10050 !important;
+    width: 100vw !important;
+    height: auto !important;
+    min-height: 50px !important;
+    padding: 13px 18px 12px !important;
+    overflow: visible !important;
+    background: transparent !important;
+    color: #000 !important;
+    mix-blend-mode: normal !important;
+    font-size: 22px !important;
+    line-height: 1 !important;
+    pointer-events: none;
+  }
+
+  .mobile-nav-open .main-nav {
+    background: #fff !important;
+    border-bottom: 1px solid #000;
+    pointer-events: auto;
+  }
+
+  .mobile-menu-toggle {
+    display: block !important;
+    position: relative;
+    z-index: 2;
+    width: max-content;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #000;
+    font: inherit;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    text-align: left;
+    pointer-events: auto;
+  }
+
+  .main-nav a,
+  body.about-page .main-nav a,
+  body.contact-page .main-nav a,
+  .detail-page.horizontal-detail-page .main-nav a {
+    position: static !important;
+    display: none !important;
+    width: auto !important;
+    min-width: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 12px 0 0 !important;
+    overflow: visible !important;
+    color: #000 !important;
+    font-size: inherit !important;
+    line-height: 1 !important;
+    pointer-events: auto;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .mobile-nav-open .main-nav a {
+    display: block !important;
+  }
+
+  .main-nav .nav-short {
+    display: none !important;
+  }
+
+  .main-nav .nav-full {
+    display: inline-block !important;
+  }
+
+  .expandable-link:hover .nav-short,
+  .expandable-link.is-nav-active .nav-short {
+    display: none !important;
+  }
+
+  .expandable-link:hover .nav-full,
+  .expandable-link.is-nav-active .nav-full {
+    display: inline-block !important;
+  }
+
+  .overview-view-toggle,
+  .three-wheel-stage,
+  .wheel-project-preview,
+  .three-wheel-canvas {
+    display: none !important;
+  }
+
+  body.project-overview-active,
+  body.list-view-active {
+    overflow-y: auto !important;
+  }
+
+  body.project-overview-active .home-projects.three-wheel-stack,
+  body.list-view-active .home-projects.three-wheel-stack {
+    display: block !important;
+    width: 100vw !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  body.project-overview-active .project-list-view,
+  body.list-view-active .project-list-view {
+    --project-list-row-height: auto !important;
+    display: block !important;
+    width: 100vw !important;
+    min-height: 100vh !important;
+    padding: 86px 0 40px !important;
+    overflow: visible !important;
+  }
+
+  .project-list-header {
+    display: none !important;
+  }
+
+  .project-list-row {
+    display: grid !important;
+    grid-template-columns: 1fr auto !important;
+    grid-template-areas:
+      "title year"
+      "type type" !important;
+    align-items: start !important;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 13px 18px 14px !important;
+    border-bottom: 1px solid #000 !important;
+    font-size: clamp(22px, 7vw, 32px) !important;
+    line-height: 1.04 !important;
+    overflow: visible !important;
+  }
+
+  .project-list-title {
+    grid-area: title !important;
+    white-space: normal !important;
+    padding: 0 14px 0 0 !important;
+  }
+
+  .project-list-year {
+    grid-area: year !important;
+    justify-self: end !important;
+    place-self: start end !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    padding: 0 !important;
+    text-align: right !important;
+    white-space: nowrap !important;
+  }
+
+  .project-list-category {
+    grid-area: type !important;
+    padding: 4px 0 0 !important;
+    font-size: 15px !important;
+    line-height: 1.08 !important;
+    white-space: normal !important;
+  }
+
+  .project-list-preview,
+  .project-list-preview.is-visible {
+    display: none !important;
+  }
+
+  .site-intro-copy {
+    top: 72px !important;
+    left: 18px !important;
+    width: calc(100vw - 36px) !important;
+    font-size: clamp(21px, 7.2vw, 34px) !important;
+    line-height: 1.04 !important;
+  }
+
+  .site-intro-copy.is-separated {
+    width: calc(100vw - 36px) !important;
+    height: calc(100vh - 72px) !important;
+  }
+
+  .home-image-window {
+    width: min(58vw, 260px) !important;
+  }
+
+  .home-image-window-symbiosis {
+    left: 0 !important;
+    bottom: 56px !important;
+  }
+
+  .home-image-window-001 {
+    top: auto !important;
+    right: 18px !important;
+    bottom: 22vh !important;
+    left: auto !important;
+  }
+
+  .home-project-marquee {
+    height: 46px !important;
+  }
+
+  body.about-page .about-intro-line {
+    padding: 78px 18px 0 !important;
+    font-size: clamp(22px, 7vw, 34px) !important;
+  }
+
+  body.about-page .about-content {
+    padding: 96px 18px 12vh !important;
+    font-size: clamp(22px, 7vw, 34px) !important;
+  }
+
+  .detail-page.horizontal-detail-page .horizontal-project-intro-panel {
+    flex-basis: 100vw !important;
+    height: auto !important;
+    min-height: 100vh !important;
+    padding: 86px 18px 48px !important;
+  }
+}
