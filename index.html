@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leonie</title>
+  <script>
+    try {
+      if (sessionStorage.getItem("leonie-site-intro-played") === "true" || location.hash === "#projects") {
+        document.documentElement.classList.add("site-intro-seen");
+      }
+    } catch (error) {}
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="overview-page home-landing-active">
+  <section class="site-intro" id="site-intro" aria-label="Introduction">
+    <p class="site-intro-copy" id="site-intro-copy">Hello, my name is Leonie. I'm a communication and fashion designer based in Berlin. My passion is to tell stories through a variety of media. I find inspiration in soft materials, nature, and the human body.</p>
+  </section>
+  <nav class="main-nav">
+    <a class="nav-home expandable-link" href="index.html">
+      <span class="nav-short">(H)</span>
+      <span class="nav-full">(HOME)</span>
+    </a>
+
+    <a class="nav-projects expandable-link" href="index.html#projects">
+      <span class="nav-short">(P)</span>
+      <span class="nav-full">(PROJECTS)</span>
+    </a>
+
+    <a class="nav-about expandable-link" href="about.html">
+      <span class="nav-short">(A)</span>
+      <span class="nav-full">(ABOUT)</span>
+    </a>
+
+    <a class="nav-contact expandable-link" href="contact.html">
+      <span class="nav-short">(C)</span>
+      <span class="nav-full">(CONTACT)</span>
+    </a>
+  </nav>
+
+  <main class="page home-page">
+    <section class="home-object-stage" id="home-object-stage" aria-label="Home">
+      <div class="home-object-canvas" id="home-object-canvas"></div>
+    </section>
+    <section class="home-image-windows" aria-label="Selected projects">
+      <a class="home-image-window home-image-window-symbiosis" href="project.html?project=symbiosis" aria-label="Open Symbiosis project">
+        <img src="assets/home/home-symbiosis.jpg" alt="Symbiosis project preview">
+      </a>
+
+      <a class="home-image-window home-image-window-001" href="project.html?project=exhibition-of-forgotten-objects" aria-label="Open Exhibition of Forgotten Objects project">
+        <span class="home-image-window-header">2026</span>
+        <img src="assets/projektvorschau/exhibition-of-forgotten-objects-pv.jpg" alt="Exhibition of Forgotten Objects project preview">
+      </a>
+    </section>
+    <a class="home-project-marquee" href="index.html#projects" aria-label="Explore my projects">
+      <span class="home-project-marquee-track" aria-hidden="true">
+        <span class="home-project-marquee-group">
+          <span>explore my projects</span><span>explore my projects</span><span>explore my projects</span><span>explore my projects</span>
+        </span>
+        <span class="home-project-marquee-group">
+          <span>explore my projects</span><span>explore my projects</span><span>explore my projects</span><span>explore my projects</span>
+        </span>
+      </span>
+    </a>
+
+    <section class="home-projects three-wheel-stack" id="projects" aria-label="Projects">
+      <section class="three-wheel-stage" aria-label="Projects wheel">
+        <a class="wheel-project-preview" href="#" aria-label="Open current project">
+          <img class="wheel-project-preview-image" src="" alt="">
+          <span class="wheel-project-preview-title"></span>
+        </a>
+        <div class="three-wheel-canvas" aria-hidden="true"></div>
+      </section>
+    </section>
+
+    <footer class="site-footer" id="site-footer">
+      <div class="footer-sticky">
+        <div class="footer-meta">
+          <a class="footer-email" href="mailto:hello@example.com">(EMAIL)</a>
+          <a class="footer-instagram" href="https://instagram.com" target="_blank">(INSTAGRAM)</a>
+        </div>
+
+        <div class="say-hello" id="say-hello">SAY HELLO</div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
