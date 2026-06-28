@@ -4874,3 +4874,236 @@ body.list-view-active .project-list-view {
     padding: 86px 18px 48px !important;
   }
 }
+
+/* Final mobile usability pass: stacked intro, compact tables, vertical project pages */
+@media (max-width: 700px) {
+  .site-intro-copy,
+  .site-intro-copy.is-separated,
+  .site-intro-copy.is-settled,
+  .site-intro.is-settled .site-intro-copy {
+    position: absolute !important;
+    top: 72px !important;
+    left: 18px !important;
+    width: calc(100vw - 36px) !important;
+    height: auto !important;
+    max-width: none !important;
+    font-size: clamp(19px, 6vw, 27px) !important;
+    line-height: 1.08 !important;
+  }
+
+  .site-intro-copy .intro-line,
+  .site-intro-copy.is-separated .intro-line {
+    display: block !important;
+    position: static !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 0 0.18em !important;
+  }
+
+  .site-intro-copy .intro-segment,
+  .site-intro-copy .intro-segment-start,
+  .site-intro-copy .intro-segment-right,
+  .site-intro-copy .intro-segment-middle,
+  .site-intro-copy .intro-segment-far,
+  .site-intro-copy .intro-segment-wide,
+  .site-intro-copy.is-separated .intro-segment {
+    display: block !important;
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    white-space: normal !important;
+  }
+
+  .site-intro-copy .intro-letter,
+  .site-intro-copy.is-separated .intro-letter,
+  .site-intro-copy.is-flying .intro-letter,
+  .site-intro-copy .intro-letter.is-gathering-letter {
+    display: inline !important;
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    left: auto !important;
+    top: auto !important;
+    color: currentColor !important;
+    transform: none !important;
+    will-change: auto !important;
+  }
+
+  body.project-overview-active .project-list-view,
+  body.list-view-active .project-list-view {
+    padding-top: 74px !important;
+  }
+
+  .project-list-row {
+    grid-template-columns: 1fr 4.2ch !important;
+    padding: 10px 18px 11px !important;
+    min-height: 0 !important;
+    font-size: clamp(16px, 4.8vw, 20px) !important;
+    line-height: 1.08 !important;
+    overflow: visible !important;
+  }
+
+  .project-list-title,
+  .project-list-year,
+  .project-list-category {
+    line-height: 1.08 !important;
+    overflow: visible !important;
+  }
+
+  .project-list-category {
+    padding-top: 3px !important;
+    font-size: clamp(12px, 3.6vw, 15px) !important;
+  }
+
+  body.about-page .about-content {
+    padding: 88px 18px 12vh !important;
+    font-size: clamp(15px, 4.25vw, 18px) !important;
+    line-height: 1.08 !important;
+  }
+
+  body.about-page .about-intro-line {
+    padding: 72px 18px 0 !important;
+    font-size: clamp(19px, 6vw, 27px) !important;
+    line-height: 1.08 !important;
+  }
+
+  body.about-page .about-row {
+    display: grid !important;
+    grid-template-columns: 5.8em minmax(0, 1fr) !important;
+    column-gap: 12px !important;
+    row-gap: 4px !important;
+    margin-bottom: 26px !important;
+    font-size: inherit !important;
+    line-height: 1.08 !important;
+  }
+
+  body.about-page .about-section-label {
+    grid-column: 1 / -1 !important;
+    margin: 0 0 4px !important;
+    min-height: 0 !important;
+  }
+
+  body.about-page .about-year {
+    grid-column: 1 !important;
+    min-height: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  body.about-page .about-description {
+    grid-column: 2 !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    white-space: normal !important;
+  }
+
+  body.about-page .about-row.about-section-start {
+    margin-top: 42px !important;
+    padding-top: 0 !important;
+  }
+
+  body.detail-page,
+  body.detail-page.horizontal-detail-page {
+    width: 100vw !important;
+    min-height: 100vh !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    background: #fff !important;
+  }
+
+  .detail-page .detail-wrapper,
+  .detail-page.horizontal-detail-page .detail-wrapper {
+    width: 100vw !important;
+    min-height: 100vh !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .detail-page.horizontal-detail-page .project-reveal,
+  .detail-page .project-reveal {
+    display: none !important;
+  }
+
+  .detail-page.horizontal-detail-page .project-hero {
+    display: none !important;
+  }
+
+  .detail-page.horizontal-detail-page .project-images,
+  .detail-page .project-images {
+    position: static !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 18px !important;
+    width: 100vw !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin: 0 !important;
+    padding: 76px 18px 42px !important;
+    overflow: visible !important;
+    transform: none !important;
+  }
+
+  .detail-page.horizontal-detail-page .horizontal-project-intro-panel {
+    flex: none !important;
+    order: -2 !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 0 10px !important;
+  }
+
+  .detail-page.horizontal-detail-page .horizontal-project-intro-meta {
+    grid-template-columns: 5.8em minmax(0, 1fr) !important;
+    gap: 0 12px !important;
+    margin: 0 0 22px !important;
+    font-size: clamp(16px, 4.8vw, 20px) !important;
+    line-height: 1.08 !important;
+  }
+
+  .detail-page.horizontal-detail-page .horizontal-project-info-toggle {
+    font-size: clamp(16px, 4.8vw, 20px) !important;
+    line-height: 1.08 !important;
+  }
+
+  .detail-page.horizontal-detail-page .horizontal-project-info-text {
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  .detail-page.horizontal-detail-page .horizontal-project-info-text p {
+    font-size: 15px !important;
+    line-height: 1.12 !important;
+  }
+
+  .detail-page.horizontal-detail-page .project-images .large-project-image,
+  .detail-page .project-images .large-project-image {
+    flex: none !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    aspect-ratio: auto !important;
+  }
+
+  .detail-page.horizontal-detail-page .project-images .large-project-image img,
+  .detail-page .project-images .large-project-image img,
+  .detail-page.horizontal-detail-page .project-images .large-project-image video,
+  .detail-page .project-images .large-project-image video {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+  }
+
+  .detail-page.horizontal-detail-page .horizontal-project-overview-link {
+    flex: none !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 34px 0 20px !important;
+    font-size: clamp(18px, 5.4vw, 24px) !important;
+  }
+}
