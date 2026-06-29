@@ -13,8 +13,11 @@ function setupMobileNavigation() {
     toggle.textContent = "(M)";
     nav.prepend(toggle);
 
-    toggle.addEventListener("click", () => {
+    toggle.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
       const isOpen = document.body.classList.toggle("mobile-nav-open");
+      nav.classList.toggle("mobile-nav-open", isOpen);
       toggle.setAttribute("aria-expanded", String(isOpen));
       toggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
       toggle.textContent = isOpen ? "(MENU)" : "(M)";
@@ -23,6 +26,7 @@ function setupMobileNavigation() {
     nav.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         document.body.classList.remove("mobile-nav-open");
+        nav.classList.remove("mobile-nav-open");
         toggle.setAttribute("aria-expanded", "false");
         toggle.setAttribute("aria-label", "Open navigation");
         toggle.textContent = "(M)";
@@ -33,6 +37,7 @@ function setupMobileNavigation() {
   function closeDesktopNav() {
     if (mobileNavQuery.matches) return;
     document.body.classList.remove("mobile-nav-open");
+    document.querySelectorAll(".main-nav").forEach((nav) => nav.classList.remove("mobile-nav-open"));
     document.querySelectorAll(".mobile-menu-toggle").forEach((toggle) => {
       toggle.setAttribute("aria-expanded", "false");
       toggle.setAttribute("aria-label", "Open navigation");

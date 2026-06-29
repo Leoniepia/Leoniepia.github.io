@@ -5629,3 +5629,90 @@ body.list-view-active .project-list-view {
     pointer-events: auto !important;
   }
 }
+
+/* Absolute final mobile navigation overlay: same behavior on every page */
+@media (max-width: 700px) {
+  body .main-nav {
+    position: fixed !important;
+    inset: 0 auto auto 0 !important;
+    z-index: 2147483000 !important;
+    display: block !important;
+    width: 100vw !important;
+    height: auto !important;
+    min-height: 50px !important;
+    max-height: 100svh !important;
+    padding: 13px 18px 12px !important;
+    overflow: visible !important;
+    background: transparent !important;
+    color: #000 !important;
+    mix-blend-mode: normal !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    transform: none !important;
+  }
+
+  body.mobile-nav-open .main-nav,
+  body .main-nav.mobile-nav-open {
+    z-index: 2147483000 !important;
+    background: #fff !important;
+    border-bottom: 1px solid #000 !important;
+    pointer-events: auto !important;
+  }
+
+  body .mobile-menu-toggle {
+    position: fixed !important;
+    top: 13px !important;
+    left: 18px !important;
+    z-index: 2147483001 !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+    color: #000 !important;
+    font: inherit !important;
+    line-height: 1 !important;
+    pointer-events: auto !important;
+    touch-action: manipulation !important;
+  }
+
+  body .main-nav a {
+    position: static !important;
+    display: none !important;
+    width: max-content !important;
+    min-width: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 12px 0 0 !important;
+    overflow: visible !important;
+    color: #000 !important;
+    font-size: inherit !important;
+    line-height: 1 !important;
+    pointer-events: none !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  body.mobile-nav-open .main-nav a,
+  body .main-nav.mobile-nav-open a {
+    display: block !important;
+    pointer-events: auto !important;
+  }
+
+  body .main-nav .nav-short {
+    display: none !important;
+  }
+
+  body .main-nav .nav-full {
+    display: inline-block !important;
+  }
+
+  body.mobile-nav-open .project-list-view,
+  body.mobile-nav-open .three-wheel-stage,
+  body.mobile-nav-open .home-projects,
+  body.mobile-nav-open .project-images,
+  body.mobile-nav-open .site-footer,
+  body.mobile-nav-open .footer-meta {
+    pointer-events: none !important;
+  }
+}
