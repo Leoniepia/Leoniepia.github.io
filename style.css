@@ -5582,3 +5582,24 @@ body.list-view-active .project-list-view {
     margin-bottom: 20px !important;
   }
 }
+
+/* Final stronger mobile About heading type */
+@media (max-width: 700px) {
+  body.about-page .about-section-label,
+  body.about-page .about-section-label .about-typewriter-line,
+  body.about-page .about-section-label .about-typewriter-character {
+    font-size: clamp(28px, 9.2vw, 42px) !important;
+    line-height: 1.02 !important;
+  }
+
+  body.about-page .about-section-label {
+    display: block !important;
+    margin: 0 0 26px !important;
+    padding: 0 !important;
+  }
+
+  body.about-page .about-row.about-section-start .about-section-label,
+  body.about-page .about-row:first-child .about-section-label {
+    margin-bottom: 28px !important;
+  }
+}
