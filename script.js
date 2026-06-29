@@ -2206,8 +2206,6 @@ const SITE_INTRO_SESSION_KEY = "leonie-site-intro-played";
 const mobileIntroQuery = window.matchMedia("(max-width: 700px)");
 
 function hasSeenSiteIntro() {
-  if (mobileIntroQuery.matches) return false;
-
   try {
     return window.sessionStorage.getItem(SITE_INTRO_SESSION_KEY) === "true";
   } catch (error) {
