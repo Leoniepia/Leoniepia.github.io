@@ -5771,3 +5771,16 @@ body.list-view-active .project-list-view {
     margin-bottom: 0 !important;
   }
 }
+
+/* Absolute final mobile menu first-link gap */
+@media (max-width: 700px) {
+  html body.mobile-nav-open .main-nav .nav-home,
+  html body .main-nav.mobile-nav-open .nav-home {
+    margin-top: 32px !important;
+  }
+
+  html body.mobile-nav-open .main-nav a:not(.nav-home),
+  html body .main-nav.mobile-nav-open a:not(.nav-home) {
+    margin-top: 0 !important;
+  }
+}

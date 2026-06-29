@@ -2313,7 +2313,6 @@ function updateHomeView() {
 
   if (projectsAreOpen) {
     ensureOverviewWheel();
-    rememberSiteIntro();
     if (introStarted) introFinished = true;
     document.body.classList.remove("intro-active");
     document.body.classList.add("intro-complete");
@@ -2369,7 +2368,6 @@ async function startSiteIntro(showImmediately = false) {
   if (!intro || !copy || introStarted || introFinished) return;
 
   introStarted = true;
-  rememberSiteIntro();
   const isMobileIntro = mobileIntroQuery.matches;
   if (!showImmediately) document.body.classList.add("intro-active");
 
@@ -2548,6 +2546,7 @@ async function startSiteIntro(showImmediately = false) {
   function settleLetters(immediate = false) {
     if (gathering || introFinished) return;
     gathering = true;
+    rememberSiteIntro();
     intro.classList.add("is-gathering");
     copy.classList.remove("is-flying");
 
