@@ -5603,3 +5603,29 @@ body.list-view-active .project-list-view {
     margin-bottom: 28px !important;
   }
 }
+
+/* Final mobile Projects tap fix: keep the menu button above the list */
+@media (max-width: 700px) {
+  body.project-overview-active .mobile-menu-toggle,
+  body.list-view-active .mobile-menu-toggle {
+    position: fixed !important;
+    top: 13px !important;
+    left: 18px !important;
+    z-index: 210000 !important;
+    display: block !important;
+    pointer-events: auto !important;
+    color: #000 !important;
+  }
+
+  body.project-overview-active.mobile-nav-open .project-list-view,
+  body.project-overview-active.mobile-nav-open .three-wheel-stage,
+  body.list-view-active.mobile-nav-open .project-list-view,
+  body.list-view-active.mobile-nav-open .three-wheel-stage {
+    pointer-events: none !important;
+  }
+
+  body.project-overview-active.mobile-nav-open .main-nav,
+  body.list-view-active.mobile-nav-open .main-nav {
+    pointer-events: auto !important;
+  }
+}
