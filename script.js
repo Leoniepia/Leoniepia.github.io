@@ -1,4 +1,51 @@
-﻿const projectData = {
+﻿/* Mobile navigation */
+function setupMobileNavigation() {
+  const mobileNavQuery = window.matchMedia("(max-width: 700px)");
+
+  document.querySelectorAll(".main-nav").forEach((nav) => {
+    if (nav.querySelector(".mobile-menu-toggle")) return;
+
+    const toggle = document.createElement("button");
+    toggle.className = "mobile-menu-toggle";
+    toggle.type = "button";
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open navigation");
+    toggle.textContent = "(M)";
+    nav.prepend(toggle);
+
+    toggle.addEventListener("click", () => {
+      const isOpen = document.body.classList.toggle("mobile-nav-open");
+      toggle.setAttribute("aria-expanded", String(isOpen));
+      toggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+      toggle.textContent = isOpen ? "(MENU)" : "(M)";
+    });
+
+    nav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        document.body.classList.remove("mobile-nav-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open navigation");
+        toggle.textContent = "(M)";
+      });
+    });
+  });
+
+  function closeDesktopNav() {
+    if (mobileNavQuery.matches) return;
+    document.body.classList.remove("mobile-nav-open");
+    document.querySelectorAll(".mobile-menu-toggle").forEach((toggle) => {
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open navigation");
+      toggle.textContent = "(M)";
+    });
+  }
+
+  mobileNavQuery.addEventListener?.("change", closeDesktopNav);
+  closeDesktopNav();
+}
+
+setupMobileNavigation();
+const projectData = {
   "exhibition-of-forgotten-objects": {
     year: "2026",
     title: "Exhibition of Forgotten Objects",
@@ -779,6 +826,24 @@ function getFallbackOverviewImage(project) {
   return overviewFallbackImages[hash % overviewFallbackImages.length];
 }
 
+const overviewProjectOrder = [
+  "exhibition-of-forgotten-objects",
+  "the-market-hallucination",
+  "ich-heisse-hannah",
+  "vorhang-auf-dunkel",
+  "reparierenstattwegwerfen",
+  "werkschau",
+  "alles-unter-einem-dach",
+  "hundert-loecher",
+  "werkbuch-ii",
+  "ei-butter-und-salz",
+  "die-cyborg-kakerlake",
+  "marguerite",
+  "nachtfallen",
+  "fluesterchen",
+  "symbiosis",
+  "werkbuch-i"
+];
 const overviewProjectSlugs = new Set([
   "exhibition-of-forgotten-objects",
   "the-market-hallucination",
@@ -1406,7 +1471,12 @@ function renderOverviewRolodex() {
       slug,
       ...project
     }))
-    .filter((project) => getOverviewImageSrc(project));
+    .filter((project) => getOverviewImageSrc(project))
+    .sort((a, b) => {
+      const indexA = overviewProjectOrder.indexOf(a.slug);
+      const indexB = overviewProjectOrder.indexOf(b.slug);
+      return (indexA === -1 ? 999 : indexA) - (indexB === -1 ? 999 : indexB);
+    });
 
   overview.innerHTML = "";
   overview.classList.add("three-wheel-stack");
@@ -2686,47 +2756,3 @@ function setupAboutTypewriter() {
 
 setupAboutTypewriter();
 
-/* Mobile navigation */
-function setupMobileNavigation() {
-  const mobileNavQuery = window.matchMedia("(max-width: 700px)");
-
-  document.querySelectorAll(".main-nav").forEach((nav) => {
-    if (nav.querySelector(".mobile-menu-toggle")) return;
-
-    const toggle = document.createElement("button");
-    toggle.className = "mobile-menu-toggle";
-    toggle.type = "button";
-    toggle.setAttribute("aria-expanded", "false");
-    toggle.setAttribute("aria-label", "Open navigation");
-    toggle.textContent = "MENU";
-    nav.prepend(toggle);
-
-    toggle.addEventListener("click", () => {
-      const isOpen = document.body.classList.toggle("mobile-nav-open");
-      toggle.setAttribute("aria-expanded", String(isOpen));
-      toggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-    });
-
-    nav.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        document.body.classList.remove("mobile-nav-open");
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Open navigation");
-      });
-    });
-  });
-
-  function closeDesktopNav() {
-    if (mobileNavQuery.matches) return;
-    document.body.classList.remove("mobile-nav-open");
-    document.querySelectorAll(".mobile-menu-toggle").forEach((toggle) => {
-      toggle.setAttribute("aria-expanded", "false");
-      toggle.setAttribute("aria-label", "Open navigation");
-    });
-  }
-
-  mobileNavQuery.addEventListener?.("change", closeDesktopNav);
-  closeDesktopNav();
-}
-
-setupMobileNavigation();

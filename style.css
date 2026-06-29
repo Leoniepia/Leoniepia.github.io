@@ -5226,3 +5226,77 @@ body.list-view-active .project-list-view {
     right: 18px !important;
   }
 }
+
+/* Mobile nav tap target fix and project order readability */
+@media (max-width: 700px) {
+  .main-nav,
+  body.about-page .main-nav,
+  body.contact-page .main-nav,
+  body.detail-page .main-nav,
+  .detail-page.horizontal-detail-page .main-nav {
+    pointer-events: auto !important;
+  }
+
+  .main-nav:not(.mobile-nav-open) a,
+  body:not(.mobile-nav-open) .main-nav a {
+    pointer-events: none !important;
+  }
+
+  body.mobile-nav-open .main-nav a {
+    pointer-events: auto !important;
+  }
+}
+
+/* Final mobile contact header and Say Hello composition */
+@media (max-width: 700px) {
+  .mobile-menu-toggle {
+    letter-spacing: -0.02em !important;
+  }
+
+  body.contact-page .footer-meta {
+    position: fixed !important;
+    top: 13px !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 10055 !important;
+    width: 100vw !important;
+    height: 24px !important;
+    padding: 0 18px !important;
+    font-size: 22px !important;
+    line-height: 1 !important;
+    color: #000 !important;
+    pointer-events: none !important;
+  }
+
+  body.contact-page .footer-meta a {
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important;
+    color: #000 !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+    letter-spacing: -0.02em !important;
+    pointer-events: auto !important;
+  }
+
+  body.contact-page .footer-email {
+    left: 31vw !important;
+  }
+
+  body.contact-page .footer-instagram {
+    right: 18px !important;
+  }
+
+  body.contact-page .say-hello {
+    left: 50% !important;
+    right: auto !important;
+    top: 54% !important;
+    width: 5ch !important;
+    transform: translate(-50%, -50%) !important;
+    white-space: normal !important;
+    text-align: left !important;
+    font-size: clamp(86px, 28vw, 140px) !important;
+    line-height: 0.82 !important;
+    letter-spacing: -0.07em !important;
+  }
+}
