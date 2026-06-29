@@ -2349,6 +2349,7 @@ async function startSiteIntro(showImmediately = false) {
 
   introStarted = true;
   rememberSiteIntro();
+  const isMobileIntro = mobileIntroQuery.matches;
   if (!showImmediately) document.body.classList.add("intro-active");
 
   const introLayout = [
@@ -2422,6 +2423,7 @@ async function startSiteIntro(showImmediately = false) {
   });
 
   copy.classList.add("is-separated", "is-flying");
+  if (isMobileIntro) copy.classList.add("mobile-intro-active");
 
   function seededValue(index) {
     const value = Math.sin(index * 9827.17 + 31.73) * 43758.5453;
@@ -2539,6 +2541,7 @@ async function startSiteIntro(showImmediately = false) {
         state.span.style.transform = "translate(0, 0) rotate(0deg)";
       });
       intro.classList.add("text-is-formed");
+      copy.classList.remove("mobile-intro-active");
       copy.classList.add("is-settled");
       intro.style.pointerEvents = "none";
 
@@ -2589,6 +2592,7 @@ async function startSiteIntro(showImmediately = false) {
     const gatherEnd = order.length * stagger + duration;
     window.setTimeout(() => {
       intro.classList.add("text-is-formed");
+      copy.classList.remove("mobile-intro-active");
       copy.classList.add("is-settled");
       intro.style.pointerEvents = "none";
     }, gatherEnd + 120);

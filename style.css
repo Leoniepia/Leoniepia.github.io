@@ -5339,3 +5339,53 @@ body.list-view-active .project-list-view {
     bottom: 46px !important;
   }
 }
+
+/* Hard mobile intro separation: flying letters are not text layout */
+@media (max-width: 700px) {
+  .site-intro-copy.mobile-intro-active {
+    position: absolute !important;
+    top: 72px !important;
+    left: 18px !important;
+    width: calc(100vw - 36px) !important;
+    height: calc(100svh - 72px) !important;
+    max-width: none !important;
+    margin: 0 !important;
+    overflow: visible !important;
+    font-size: clamp(18px, 5.35vw, 24px) !important;
+    line-height: 1 !important;
+    color: #000 !important;
+  }
+
+  .site-intro-copy.mobile-intro-active .intro-line,
+  .site-intro-copy.mobile-intro-active .intro-segment {
+    display: block !important;
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    white-space: normal !important;
+  }
+
+  .site-intro-copy.mobile-intro-active .intro-line::after,
+  .site-intro-copy.mobile-intro-active .intro-segment::after {
+    content: none !important;
+  }
+
+  .site-intro-copy.mobile-intro-active .intro-word {
+    display: contents !important;
+    white-space: normal !important;
+  }
+
+  .site-intro-copy.mobile-intro-active .intro-letter {
+    position: absolute !important;
+    display: block !important;
+    margin: 0 !important;
+    color: #000 !important;
+    white-space: pre !important;
+    line-height: 1 !important;
+    will-change: left, top, transform !important;
+    z-index: 6 !important;
+  }
+}
