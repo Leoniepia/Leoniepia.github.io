@@ -6,7 +6,8 @@
   <title>Leonie</title>
   <script>
     try {
-      if (sessionStorage.getItem("leonie-site-intro-played") === "true" || location.hash === "#projects") {
+      const isMobileIntro = window.matchMedia("(max-width: 700px)").matches;
+      if ((!isMobileIntro && sessionStorage.getItem("leonie-site-intro-played") === "true") || location.hash === "#projects") {
         document.documentElement.classList.add("site-intro-seen");
       }
     } catch (error) {}

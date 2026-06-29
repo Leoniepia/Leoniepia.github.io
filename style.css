@@ -5300,3 +5300,44 @@ body.list-view-active .project-list-view {
     letter-spacing: -0.07em !important;
   }
 }
+
+/* Final mobile intro start and fixed Home frame position */
+@media (max-width: 700px) {
+  html.site-intro-seen .site-intro:not(.is-settled) {
+    background: #fff !important;
+  }
+
+  .site-intro-copy.is-separated:not(.is-settled) .intro-letter,
+  .site-intro-copy.is-flying .intro-letter,
+  .site-intro-copy .intro-letter.is-gathering-letter {
+    position: absolute !important;
+    display: block !important;
+    width: auto;
+    height: auto;
+    margin: 0 !important;
+    white-space: pre !important;
+    will-change: left, top, transform !important;
+  }
+
+  .site-intro-copy.is-settled .intro-letter {
+    position: static !important;
+    display: inline !important;
+    width: auto !important;
+    height: auto !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    will-change: auto !important;
+  }
+
+  .home-image-window-001 {
+    top: clamp(232px, 68vw, 282px) !important;
+    right: 18px !important;
+    bottom: auto !important;
+    left: auto !important;
+  }
+
+  .home-image-window-symbiosis {
+    bottom: 46px !important;
+  }
+}
