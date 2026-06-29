@@ -5389,3 +5389,60 @@ body.list-view-active .project-list-view {
     z-index: 6 !important;
   }
 }
+
+/* Final mobile detail-page menu: open fully above project content */
+@media (max-width: 700px) {
+  body.detail-page .main-nav {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 200000 !important;
+    width: 100vw !important;
+    min-height: 50px !important;
+    max-height: 100svh !important;
+    padding: 13px 18px 12px !important;
+    overflow: visible !important;
+    background: transparent !important;
+    color: #000 !important;
+    mix-blend-mode: normal !important;
+    pointer-events: auto !important;
+  }
+
+  body.detail-page.mobile-nav-open .main-nav {
+    height: auto !important;
+    overflow: visible !important;
+    background: #fff !important;
+    border-bottom: 1px solid #000 !important;
+  }
+
+  body.detail-page .main-nav a {
+    position: static !important;
+    display: none !important;
+    width: max-content !important;
+    min-width: 0 !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 12px 0 0 !important;
+    overflow: visible !important;
+    color: #000 !important;
+    font-size: inherit !important;
+    line-height: 1 !important;
+    pointer-events: none !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  body.detail-page.mobile-nav-open .main-nav a {
+    display: block !important;
+    pointer-events: auto !important;
+  }
+
+  body.detail-page .main-nav .nav-short {
+    display: none !important;
+  }
+
+  body.detail-page .main-nav .nav-full {
+    display: inline-block !important;
+  }
+}
