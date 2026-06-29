@@ -5588,8 +5588,8 @@ body.list-view-active .project-list-view {
   body.about-page .about-section-label,
   body.about-page .about-section-label .about-typewriter-line,
   body.about-page .about-section-label .about-typewriter-character {
-    font-size: clamp(28px, 9.2vw, 42px) !important;
-    line-height: 1.02 !important;
+    font-size: clamp(19px, 6vw, 27px) !important;
+    line-height: 1.08 !important;
   }
 
   body.about-page .about-section-label {
