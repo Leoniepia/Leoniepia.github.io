@@ -5729,3 +5729,19 @@ body.list-view-active .project-list-view {
     padding-top: 12px !important;
   }
 }
+
+/* Final mobile About column alignment: text starts after the end of good. */
+@media (max-width: 700px) {
+  body.about-page .about-row {
+    grid-template-columns: min(44vw, 13.2em) minmax(0, 1fr) !important;
+    column-gap: 10px !important;
+  }
+
+  body.about-page .about-year {
+    grid-column: 1 !important;
+  }
+
+  body.about-page .about-description {
+    grid-column: 2 !important;
+  }
+}
