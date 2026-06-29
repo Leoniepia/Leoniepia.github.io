@@ -5716,3 +5716,16 @@ body.list-view-active .project-list-view {
     pointer-events: none !important;
   }
 }
+
+/* Absolute final mobile menu spacing */
+@media (max-width: 700px) {
+  body.mobile-nav-open .main-nav,
+  body .main-nav.mobile-nav-open {
+    padding-top: 46px !important;
+  }
+
+  body.mobile-nav-open .main-nav a,
+  body .main-nav.mobile-nav-open a {
+    padding-top: 12px !important;
+  }
+}

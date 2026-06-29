@@ -2207,7 +2207,7 @@ setupWheelStack();
 
 let introStarted = false;
 let introFinished = false;
-const SITE_INTRO_SESSION_KEY = "leonie-site-intro-played";
+const SITE_INTRO_SESSION_KEY = "leonie-site-intro-played-v2";
 const mobileIntroQuery = window.matchMedia("(max-width: 700px)");
 
 function hasSeenSiteIntro() {
