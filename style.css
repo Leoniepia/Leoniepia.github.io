@@ -5745,3 +5745,29 @@ body.list-view-active .project-list-view {
     grid-column: 2 !important;
   }
 }
+
+/* Absolute final uniform mobile menu rhythm */
+@media (max-width: 700px) {
+  html body.mobile-nav-open .main-nav,
+  html body .main-nav.mobile-nav-open {
+    padding: 58px 18px 16px !important;
+  }
+
+  html body.mobile-nav-open .main-nav a,
+  html body .main-nav.mobile-nav-open a {
+    display: block !important;
+    margin: 0 0 13px !important;
+    padding: 0 !important;
+    line-height: 1 !important;
+  }
+
+  html body.mobile-nav-open .main-nav a:first-of-type,
+  html body .main-nav.mobile-nav-open a:first-of-type {
+    margin-top: 0 !important;
+  }
+
+  html body.mobile-nav-open .main-nav a:last-of-type,
+  html body .main-nav.mobile-nav-open a:last-of-type {
+    margin-bottom: 0 !important;
+  }
+}
