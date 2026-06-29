@@ -1515,9 +1515,27 @@ function renderOverviewRolodex() {
 
 function ensureOverviewWheel() {
   const overview = document.querySelector(".overview-page .home-projects");
-  if (!overview || overview.dataset.wheelReady === "true" || !overview._projectData) return;
-  overview.dataset.wheelReady = "true";
-  setupThreeProjectWheel(overview._projectData, overview);
+  if (!overview || !overview._projectData) return;
+
+  const canvasHost = overview.querySelector(".three-wheel-canvas");
+  const hasWheel = Boolean(canvasHost?.querySelector("canvas, .dom-wheel-card"));
+  if (overview.dataset.wheelReady === "true" && hasWheel) return;
+  if (overview.dataset.wheelReady === "loading") return;
+
+  overview.dataset.wheelReady = "loading";
+  if (canvasHost && !hasWheel) canvasHost.innerHTML = "";
+
+  Promise.resolve(setupThreeProjectWheel(overview._projectData, overview))
+    .then(() => {
+      const wheelWasBuilt = Boolean(canvasHost?.querySelector("canvas, .dom-wheel-card"));
+      if (!wheelWasBuilt) setupDomProjectWheel(overview._projectData, overview);
+      overview.dataset.wheelReady = "true";
+    })
+    .catch(() => {
+      if (canvasHost) canvasHost.innerHTML = "";
+      setupDomProjectWheel(overview._projectData, overview);
+      overview.dataset.wheelReady = "true";
+    });
 }
 
 renderOverviewRolodex();
@@ -2624,6 +2642,10 @@ async function startSiteIntro(showImmediately = false) {
   }
 }
 window.addEventListener("hashchange", updateHomeView);
+window.addEventListener("pageshow", () => {
+  updateHomeView();
+  if (window.location.hash === "#projects") window.setTimeout(ensureOverviewWheel, 80);
+});
 updateHomeView();
 document.querySelectorAll(".nav-home").forEach((link) => {
   link.addEventListener("click", () => {
