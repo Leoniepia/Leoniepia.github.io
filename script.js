@@ -2612,7 +2612,8 @@ async function startSiteIntro(showImmediately = false) {
   intro.setAttribute("role", "button");
   intro.setAttribute("aria-label", "Gather introduction text");
 
-  if (showImmediately || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const shouldReduceMotion = !mobileIntroQuery.matches && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (showImmediately || shouldReduceMotion) {
     settleLetters(true);
   } else {
     requestAnimationFrame(animateLetters);

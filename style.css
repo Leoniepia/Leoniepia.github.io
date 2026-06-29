@@ -4915,10 +4915,8 @@ body.list-view-active .project-list-view {
     white-space: normal !important;
   }
 
-  .site-intro-copy .intro-letter,
-  .site-intro-copy.is-separated .intro-letter,
-  .site-intro-copy.is-flying .intro-letter,
-  .site-intro-copy .intro-letter.is-gathering-letter {
+  .site-intro-copy.is-settled .intro-letter,
+  .site-intro.is-settled .site-intro-copy .intro-letter {
     display: inline !important;
     position: static !important;
     width: auto !important;
